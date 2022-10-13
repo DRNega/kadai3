@@ -23,7 +23,7 @@ void SceneMain::init()
 {
 	m_hPlayerGraphic = LoadGraph("data/kitai.jpg");
 	m_hShotGraphic = LoadGraph("data/syuriken.jpg");
-	//m_hEnemyGraphic = LoadGraph("data/player.bmp");
+	m_hEnemyGraphic = LoadGraph("data/kidan1.png");
 
 	m_player.setHandle(m_hPlayerGraphic);
 	m_enemy.setHandle(m_hEnemyGraphic);

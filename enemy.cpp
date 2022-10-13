@@ -7,7 +7,7 @@
 namespace
 {
 	// X方向、Y方向の最大速度
-	constexpr float kSpeedMax = 8.0f;
+	constexpr float kSpeedMax = 4.0f;
 	constexpr float kAcc = 0.4f;
 	// ショットの発射間隔
 	constexpr int kShotInterval = 8;
@@ -27,10 +27,10 @@ Enemy::~Enemy()
 
 void Enemy::init()
 {
-	m_pos.x = 125.0f;
-	m_pos.y = 125.0f;
-	m_vec.x = 0.0f;
-	m_vec.y = 0.0f;
+	m_pos.x = 800.0f;
+	m_pos.y = 360.0f;
+	m_vec.x = 800.0f;
+	m_vec.y = 360.0f;
 	m_shotInterval = 0;
 }
 

@@ -4,6 +4,7 @@
 namespace
 {
 	constexpr float kShotSpeed = 8.0f;
+	constexpr float kRotaSpeed = 0.2f;
 }
 
 void ShotNormal::start(Vec2 pos)
@@ -22,4 +23,6 @@ void ShotNormal::update()
 	{
 		m_isExist = false;
 	}
+
+	m_angle += kRotaSpeed;
 }

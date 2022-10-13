@@ -5,7 +5,7 @@
 namespace
 {
 	constexpr float kShotSpeed = 8.0f;
-	constexpr double m_angle = 90.0f;
+	//constexpr double m_angle = 90.0f;
 }
 
 ShotBase::ShotBase()
@@ -30,6 +30,9 @@ void ShotBase::start(Vec2 pos)
 	m_isExist = true;
 	m_pos = pos;
 
+	m_pos.x += 50;
+	m_pos.y += 50;
+
 	m_vec.x = kShotSpeed;
 	m_vec.y = 0.0f;
 }
@@ -48,5 +51,5 @@ void ShotBase::update()
 void ShotBase::draw()
 {
 	if (!m_isExist) return;
-	DrawRotaGraph(m_pos.x, m_pos.y, 1.0, 90, m_handle, true, false);
+	DrawRotaGraph(m_pos.x, m_pos.y, 1.0, m_angle, m_handle, true, false);
 }

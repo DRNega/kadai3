@@ -32,5 +32,5 @@ protected:
 	bool m_isExist;
 
 	// ’e‚Ì‰ñ“]
-	bool m_angle;
+	float m_angle;
 };
