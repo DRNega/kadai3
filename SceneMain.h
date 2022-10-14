@@ -23,20 +23,35 @@ public:
 	// 弾の生成
 	bool createShot(Vec2 pos);
 
+	// 敵の生成
+	void createEnemyRight();
+
+	virtual bool isGameEnd() { return m_isGameEnd; }
+	virtual bool isEnd() { return m_isEnd; }
+
 private:
 	// ショットの最大数
 	static constexpr int kShotMax = 64;
+	static constexpr int kMobMax = 5;
 
 private:
 
 	// プレイヤーのグラフィックハンドル
 	int m_hPlayerGraphic;
-	int m_hEnemyGraphic;
+	// 弾のグラフィックハンドル
 	int m_hShotGraphic;
+	// 敵のグラフィックハンドル
+	int m_hEnemyGraphic;
 	// プレイヤー
 	Player m_player;
 	// 敵
 	Enemy m_enemy;
+	// 敵
+	Enemy m_EnemyRight[kMobMax];
 	// ショット
 	ShotNormal m_shot[kShotMax];
+
+	// ゲーム終了
+	bool m_isGameEnd;
+	bool m_isEnd;
 };

@@ -156,6 +156,7 @@
     <ClCompile Include="player.cpp" />
     <ClCompile Include="SceneBase.cpp" />
     <ClCompile Include="SceneMain.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="SceneTitle.cpp" />
     <ClCompile Include="ShotBase.cpp" />
     <ClCompile Include="ShotNormal.cpp" />
@@ -167,6 +168,7 @@
     <ClInclude Include="player.h" />
     <ClInclude Include="SceneBase.h" />
     <ClInclude Include="SceneMain.h" />
+    <ClInclude Include="SceneManager.h" />
     <ClInclude Include="SceneTitle.h" />
     <ClInclude Include="ShotBase.h" />
     <ClInclude Include="ShotNormal.h" />

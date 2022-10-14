@@ -12,6 +12,9 @@ SceneMain::SceneMain()
 	m_hPlayerGraphic = -1;
 	m_hShotGraphic = -1;
 	m_hEnemyGraphic = -1;
+
+	m_isGameEnd = false;
+	m_isEnd = false;
 }
 SceneMain::~SceneMain()
 {
@@ -35,6 +38,12 @@ void SceneMain::init()
 	{
 		shot.setHandle(m_hShotGraphic);
 	}
+
+	for (auto& EnemyRight : m_EnemyRight)
+	{
+		EnemyRight.setHandle(m_hEnemyGraphic);
+		EnemyRight.init();
+	}
 }
 
 // èIóπèàóù
@@ -53,6 +62,13 @@ void SceneMain::update()
 	for (auto& shot : m_shot)
 	{
 		shot.update();
+	}
+
+	m_isEnd = false;
+
+	for (auto& EnemyRight : m_EnemyRight)
+	{
+		EnemyRight.update();
 	}
 }
 
@@ -86,4 +102,15 @@ bool SceneMain::createShot(Vec2 pos)
 		return true;
 	}
 	return false;
+}
+
+void SceneMain::createEnemyRight()
+{
+	for (auto& EnemyRight : m_EnemyRight)
+	{
+		if (EnemyRight.isExist()) continue;
+
+		EnemyRight.start(EnemyRight.getRandPos());
+		return;
+	}
 }

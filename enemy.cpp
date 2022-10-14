@@ -35,6 +35,7 @@ Enemy::~Enemy()
 
 void Enemy::init()
 {
+
 	m_pos.x = kSetEnemy;
 	m_pos.y = 180.0f;
 
