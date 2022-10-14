@@ -9,6 +9,11 @@ namespace Game
 	// ウインドウサイズ
 	constexpr int kScreenWidth = 1280;
 	constexpr int kScreenHeight = 720;
+
+	// ゲームのステージサイズ
+	constexpr int kStageUpperLimit = 100;
+	constexpr int kStageLowerLimit = 620;
+
 	// カラーモード
 	constexpr int kColorDepth = 32;		// 32 or 16
 };

@@ -22,12 +22,13 @@ SceneMain::~SceneMain()
 void SceneMain::init()
 {
 	m_hPlayerGraphic = LoadGraph("data/kitai.jpg");
-	m_hShotGraphic = LoadGraph("data/syuriken.jpg");
+	m_hShotGraphic = LoadGraph("data/syuriken2.jpg");
 	m_hEnemyGraphic = LoadGraph("data/kidan1.png");
 
 	m_player.setHandle(m_hPlayerGraphic);
 	m_enemy.setHandle(m_hEnemyGraphic);
 	m_player.init();
+	m_enemy.init();
 	m_player.setMain(this);
 
 	for (auto& shot : m_shot)

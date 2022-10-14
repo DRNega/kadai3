@@ -9,19 +9,22 @@ class Enemy
 public:
 	Enemy();
 	virtual ~Enemy();
+	virtual Vec2 getRandPos();
+	virtual void start(Vec2 pos);
 
 	// グラフィックデータ設定
-	void setHandle(int handle) { m_handle = handle; }
+	virtual void setHandle(int handle) { m_handle = handle; }
 
 	// プレイヤーの初期化
-	void init();
-	// SceneMainクラスのポインタ設定
-	void setMain(SceneMain* pMain) { m_pMain = pMain; }
-
+	virtual void init();
+	
 	// 処理
-	void update();
+	virtual void update();
 	// 描画
-	void draw();
+	virtual void draw();
+
+	float getPosX() const { return m_pos.x; }
+	float getPosY() const { return m_pos.y; }
 
 	// 情報の取得
 	Vec2 getPos() const { return m_pos; }
@@ -29,8 +32,9 @@ public:
 private:
 	int m_handle;
 
-	// SceneMainのポインタ
-	SceneMain* m_pMain;
+	// 画像サイズ
+	int m_height;
+	int m_width;
 
 	// 表示位置
 	Vec2 m_pos;
@@ -38,4 +42,10 @@ private:
 	Vec2 m_vec;
 	// ショットの発射間隔
 	int m_shotInterval;
+
+	// 存在するか
+	bool m_isExist;
+
+	// 弾の回転
+	float m_angle;
 };
