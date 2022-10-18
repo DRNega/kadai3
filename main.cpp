@@ -2,6 +2,7 @@
 
 #include "game.h"
 #include "SceneMain.h"
+#include "SceneManager.h"
 
 
 // プログラムは WinMain から始まります
@@ -22,6 +23,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	// ダブルバッファモード
 	SetDrawScreen(DX_SCREEN_BACK);
 
+	int isGameEnd = false;
+
 	SceneMain scene;
 
 	// 画像のロード
@@ -36,6 +39,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		scene.update();
 
 		scene.draw();
+
+		isGameEnd = scene.getIsGameEnd();
+		if (isGameEnd)
+		{
+			break;
+		}
 
 		//裏画面を表画面を入れ替える
 		ScreenFlip();
