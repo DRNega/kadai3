@@ -7,7 +7,7 @@
 namespace
 {
 	// X方向、Y方向の最大速度
-	constexpr float kSpeedMax = 8.0f;
+	constexpr float kSpeedMax = 4.0f;
 	constexpr float kAcc = 0.4f;
 	// ショットの発射間隔
 	constexpr int kShotInterval = 16;
@@ -18,6 +18,8 @@ Player::Player()
 	m_handle = -1;
 	m_pMain = nullptr;
 	m_shotInterval = 0;
+
+	m_isDead = false;
 }
 
 Player::~Player()
@@ -27,11 +29,19 @@ Player::~Player()
 
 void Player::init()
 {
+	m_isDead = false;
+
 	m_pos.x = 100.0f;
 	m_pos.y = 100.0f;
 	m_vec.x = 0.0f;
 	m_vec.y = 0.0f;
 	m_shotInterval = 0;
+}
+
+void Player::setPos(float x, float y)
+{
+	m_pos.x = x;
+	m_pos.y = y;
 }
 
 void Player::update()
@@ -85,5 +95,26 @@ void Player::update()
 
 void Player::draw()
 {
+	if (m_isDead)
+	{
+		DrawRotaGraphF(m_pos.x + 15.0f, m_pos.y, 1.0, DX_PI, m_deadHandle, true, false);
+	}
+	else if (m_isDead)
+	{
+		DrawRotaGraphF(m_pos.x + 15.0f, m_pos.y, 1.0, DX_PI, m_deadHandle, true, true);
+	}
+	else if (m_isDead)
+	{
+		DrawTurnGraphF(m_pos.x, m_pos.y, m_deadHandle, true);
+	}
+	else if (m_isDead)
+	{
+		DrawGraphF(m_pos.x, m_pos.y, m_deadHandle, true);
+	}
+	else
+	{
+		DrawGraphF(m_pos.x, m_pos.y, m_aliveHandle, true);
+	}
+
 	DrawGraphF(m_pos.x, m_pos.y, m_handle, true);
 }

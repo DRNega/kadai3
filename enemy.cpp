@@ -37,7 +37,7 @@ void Enemy::init()
 {
 
 	m_pos.x = kSetEnemy;
-	m_pos.y = 180.0f;
+	m_pos.y = 100.0f;
 
 	m_vec.x = kSpeedMax;
 }
@@ -76,5 +76,26 @@ void Enemy::update()
 
 void Enemy::draw()
 {
+	if (m_isDead)
+	{
+		DrawRotaGraphF(m_pos.x + 15.0f, m_pos.y, 1.0, DX_PI, m_deadHandle, true, false);
+	}
+	else if (m_isDead)
+	{
+		DrawRotaGraphF(m_pos.x + 15.0f, m_pos.y, 1.0, DX_PI, m_deadHandle, true, true);
+	}
+	else if (m_isDead)
+	{
+		DrawTurnGraphF(m_pos.x, m_pos.y, m_deadHandle, true);
+	}
+	else if (m_isDead)
+	{
+		DrawGraphF(m_pos.x, m_pos.y, m_deadHandle, true);
+	}
+	else
+	{
+		DrawGraphF(m_pos.x, m_pos.y, m_aliveHandle, true);
+	}
+
 	DrawGraphF(m_pos.x, m_pos.y, m_handle, true);
 }

@@ -17,6 +17,12 @@ public:
 	// 表示
 	virtual void draw();
 
+	// 当たり判定実装用に四方向の座標を取得する　
+	float getLeft()	const { return m_pos.x; }
+	float getRight()	const { return m_pos.x + static_cast<float>(m_width); }
+	float getTop()	const { return m_pos.y; }
+	float getBottom() const { return m_pos.y + static_cast<float>(m_height); }
+
 	// 存在するか
 	bool isExist() const { return m_isExist; }
 
@@ -27,6 +33,10 @@ protected:
 	Vec2	m_pos;
 	// 移動
 	Vec2	m_vec;
+
+	// 画像サイズ
+	int m_height;
+	int m_width;
 
 	// 存在するか
 	bool m_isExist;

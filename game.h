@@ -9,6 +9,7 @@ namespace Game
 	// ウインドウサイズ
 	constexpr int kScreenWidth = 1280;
 	constexpr int kScreenHeight = 720;
+	constexpr int kScreenInterval = 10;
 
 	// ゲームのステージサイズ
 	constexpr int kStageUpperLimit = 100;

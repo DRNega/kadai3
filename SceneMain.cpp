@@ -1,5 +1,6 @@
 #include "DxLib.h"
 #include "SceneMain.h"
+#include "game.h"
 
 namespace
 {
@@ -12,6 +13,8 @@ SceneMain::SceneMain()
 	m_hPlayerGraphic = -1;
 	m_hShotGraphic = -1;
 	m_hEnemyGraphic = -1;
+
+	
 
 	m_isGameEnd = false;
 	m_isEnd = false;
@@ -44,6 +47,11 @@ void SceneMain::init()
 		EnemyRight.setHandle(m_hEnemyGraphic);
 		EnemyRight.init();
 	}
+
+	m_player.setPos(Game::kScreenWidth / 2, Game::kScreenHeight / 2);
+	m_player.init();
+
+	m_isEnd = false;
 }
 
 // èIóπèàóù

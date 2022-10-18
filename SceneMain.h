@@ -38,16 +38,20 @@ private:
 
 	// プレイヤーのグラフィックハンドル
 	int m_hPlayerGraphic;
+
 	// 弾のグラフィックハンドル
 	int m_hShotGraphic;
+	
 	// 敵のグラフィックハンドル
 	int m_hEnemyGraphic;
+	
 	// プレイヤー
 	Player m_player;
+	
 	// 敵
 	Enemy m_enemy;
-	// 敵
 	Enemy m_EnemyRight[kMobMax];
+	
 	// ショット
 	ShotNormal m_shot[kShotMax];
 
