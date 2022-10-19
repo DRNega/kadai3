@@ -10,6 +10,7 @@ namespace
 
 SceneMain::SceneMain()
 {
+	m_hBackgroundGraphic = -1;
 	m_hPlayerGraphic = -1;
 	m_hShotGraphic = -1;
 	m_hEnemyGraphic = -1;
@@ -27,6 +28,7 @@ SceneMain::~SceneMain()
 // èâä˙âª
 void SceneMain::init()
 {
+	m_hBackgroundGraphic = LoadGraph(Game::kBackgroundGraph);
 	m_hPlayerGraphic = LoadGraph("data/kitai.jpg");
 	m_hShotGraphic = LoadGraph("data/syuriken2.jpg");
 	m_hEnemyGraphic = LoadGraph("data/kidan1.png");

@@ -35,6 +35,8 @@ private:
 	static constexpr int kMobMax = 5;
 
 private:
+	// 背景のグラフィックハンドル
+	int m_hBackgroundGraphic;
 
 	// プレイヤーのグラフィックハンドル
 	int m_hPlayerGraphic;

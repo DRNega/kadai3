@@ -10,6 +10,8 @@ namespace Game
 	constexpr int kScreenWidth = 1280;
 	constexpr int kScreenHeight = 720;
 	constexpr int kScreenInterval = 10;
+	constexpr int kScreenWidthHalf = kScreenWidth / 2;
+	constexpr int kScreenHeightHalf = kScreenHeight / 2;
 
 	// ゲームのステージサイズ
 	constexpr int kStageUpperLimit = 100;
@@ -17,4 +19,8 @@ namespace Game
 
 	// カラーモード
 	constexpr int kColorDepth = 32;		// 32 or 16
+
+	// 背景画像
+	const char* const kBackgroundGraph = "data/hoshi.jpg";
+
 };

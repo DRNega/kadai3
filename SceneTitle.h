@@ -42,6 +42,8 @@ private:
 
 	// 画像データ
 	int m_handle;
+	int m_hBackgroundGraphic;
+
 	// 画像サイズ
 	int m_width;
 	int m_height;

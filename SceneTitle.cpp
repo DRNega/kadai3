@@ -7,27 +7,30 @@ namespace
 	// タイトルメッセージ
 	const char* const kTitleMessage = "Zキー or Aボタンを押して";
 	const char* const kGameStart = "スタート";
-	// テキストの回転角度
-	constexpr float kRotaSpeed = 0.02f;
 }
 
 void SceneTitle::init()
 {
+	m_handle = LoadGraph("data/kidan2.png");
+	GetGraphSize(m_handle, &m_width, &m_height);
+
+	// 背景画像
+	m_hBackgroundGraphic = LoadGraph(Game::kBackgroundGraph);
+
 	m_TextPosY = 0;
 	m_TextVecY = 4;
 
-	m_angle = 0;
+	//m_angle = 0;
 
 	m_isEnd = false;
 
-	m_handle = LoadGraph("data/kidan2.png");
-	GetGraphSize(m_handle, &m_width, &m_height);
 }
 
 // 終了処理
 void SceneTitle::end()
 {
 	DeleteGraph(m_handle);
+	DeleteGraph(m_hBackgroundGraphic);
 }
 
 void SceneTitle::update()
@@ -54,6 +57,15 @@ void SceneTitle::update()
 
 void SceneTitle::draw()
 {
+	// 背景画像を読み込んで表示
+	DrawGraph(0, 0, m_hBackgroundGraphic, true);
+
+	// ゲームタイトルの画像表示
+	DrawGraph(0, m_TextPosY, m_handle, true);
+	DrawGraph(Game::kScreenWidth - m_width, m_TextPosY, m_handle, true);
+
+	DrawRotaGraphF(Game::kScreenWidthHalf, Game::kScreenHeight / 3, 1.5, 0, m_handle, true, false);
+
 	SetFontSize(60);
 
 	/*DrawString(0, m_LeftTextPosY, "YYYYYY", GetColor(255, 255, 255));
