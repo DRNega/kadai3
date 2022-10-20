@@ -4,7 +4,7 @@
 
 namespace
 {
-	constexpr float kShotSpeed = 8.0f;
+	constexpr float kShotSpeed = 30.0f;
 	//constexpr double m_angle = 90.0f;
 }
 

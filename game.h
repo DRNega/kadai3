@@ -14,13 +14,13 @@ namespace Game
 	constexpr int kScreenHeightHalf = kScreenHeight / 2;
 
 	// ゲームのステージサイズ
-	constexpr int kStageUpperLimit = 100;
+	constexpr int kStageUpperLimit = 0;
 	constexpr int kStageLowerLimit = 620;
 
 	// カラーモード
 	constexpr int kColorDepth = 32;		// 32 or 16
 
 	// 背景画像
-	const char* const kBackgroundGraph = "data/hoshi.jpg";
+	const char* const kBackgroundGraph = "data/utyuu.jpg";
 
 };

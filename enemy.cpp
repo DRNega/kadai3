@@ -76,7 +76,7 @@ void Enemy::update()
 
 void Enemy::draw()
 {
-	if (m_isDead)
+	/*if (m_isDead)
 	{
 		DrawRotaGraphF(m_pos.x + 15.0f, m_pos.y, 1.0, DX_PI, m_deadHandle, true, false);
 	}
@@ -97,5 +97,8 @@ void Enemy::draw()
 		DrawGraphF(m_pos.x, m_pos.y, m_aliveHandle, true);
 	}
 
-	DrawGraphF(m_pos.x, m_pos.y, m_handle, true);
+	DrawGraphF(m_pos.x, m_pos.y, m_handle, true);*/
+
+	DrawRotaGraphF(getCenterX(), getCenterY(), 1.0, m_angle, m_handle, true, false);
+	DrawBox(getLeft(), getTop(), getRight(), getBottom(), GetColor(255, 255, 255), false);
 }

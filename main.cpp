@@ -25,7 +25,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	int isGameEnd = false;
 
-	SceneMain scene;
+	SceneManager scene;
 
 	// ‰æ‘œ‚Ìƒ[ƒh
 	scene.init();
@@ -40,11 +40,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 		scene.draw();
 
-		/*isGameEnd = scene.getIsGameEnd();
+		isGameEnd = scene.getIsGameEnd();
 		if (isGameEnd)
 		{
 			break;
-		}*/
+		}
 
 		//— ‰æ–Ê‚ğ•\‰æ–Ê‚ğ“ü‚ê‘Ö‚¦‚é
 		ScreenFlip();

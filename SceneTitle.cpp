@@ -74,6 +74,6 @@ void SceneTitle::draw()
 	DrawString(Game::kScreenWidth / 2 - 90, 210, "YYYYYY", GetColor(255, 255, 255));*/
 
 	SetFontSize(30);
-	DrawString(Game::kScreenWidth / 2 - 180, Game::kScreenHeight / 2, "Zキー or Aボタンを押して", GetColor(255, 255, 255));
-	DrawString(Game::kScreenWidth / 2 - 105, Game::kScreenHeight / 2 + 30, "ゲームスタート", GetColor(255, 255, 255));
+	DrawString(Game::kScreenWidth / 2 - GetDrawStringWidth(kTitleMessage, 12), Game::kScreenHeight / 2, kTitleMessage, GetColor(255, 255, 255));
+	DrawString(Game::kScreenWidth / 2 - GetDrawStringWidth(kGameStart, 4), Game::kScreenHeight / 2 + 30, kGameStart, GetColor(255, 255, 255));
 }

@@ -18,6 +18,8 @@ Player::Player()
 	m_handle = -1;
 	m_pMain = nullptr;
 	m_shotInterval = 0;
+	m_width = 0;
+	m_height = 0;
 
 	m_isDead = false;
 }
@@ -91,6 +93,27 @@ void Player::update()
 		m_vec.x *= 0.9f;
 	}
 	m_pos += m_vec;
+
+	// 画面端に行こうとした場合
+	if (getLeft() < 0)
+	{
+		m_pos.x = 0.0f;    // 画面端より左には行かない
+	}
+	if (getRight() > Game::kScreenWidth)
+	{
+		m_pos.x = static_cast<float>(Game::kScreenWidth - m_width); // 画面端より右には行かない
+	}
+	// ステージの範囲外に行こうとした場合
+	if (getTop() < Game::kStageUpperLimit)
+	{
+		m_pos.y = Game::kStageUpperLimit;   // ステージの範囲より上には行かない
+		
+	}
+	if (getBottom() > Game::kStageLowerLimit)
+	{
+		m_pos.y = static_cast<float>(Game::kStageLowerLimit - m_height);    // ステージの範囲より下には行かない
+		
+	}
 }
 
 void Player::draw()

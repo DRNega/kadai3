@@ -28,7 +28,11 @@ public:
 	float getPosX() const { return m_pos.x; }
 	float getPosY() const { return m_pos.y; }
 
-	virtual void isDead() { m_isDead = true; }
+	// プレイヤーの中心座標取得
+	virtual float getCenterX() { return m_pos.x + (m_width / 2); }
+	virtual float getCenterY() { return m_pos.y + (m_height / 2); }
+
+	virtual void setDead() { m_isDead = true; }
 	virtual bool getIsDead() { return m_isDead; }
 
 	// 当たり判定実装用に四方向の座標を取得する　

@@ -19,12 +19,14 @@ public:
 	void update();
 	// 毎フレームの描画
 	void draw();
+	// 当たり判定チェック処理
+	void checkCollision();
 
 	// 弾の生成
 	bool createShot(Vec2 pos);
 
 	// 敵の生成
-	void createEnemyRight();
+	void createEnemy();
 
 	virtual bool isGameEnd() { return m_isGameEnd; }
 	virtual bool isEnd() { return m_isEnd; }
@@ -33,6 +35,8 @@ private:
 	// ショットの最大数
 	static constexpr int kShotMax = 64;
 	static constexpr int kMobMax = 5;
+	// 敵の最大出現数
+	static constexpr int kEnemyMax = 5;
 
 private:
 	// 背景のグラフィックハンドル
@@ -51,8 +55,8 @@ private:
 	Player m_player;
 	
 	// 敵
-	Enemy m_enemy;
-	Enemy m_EnemyRight[kMobMax];
+	Enemy m_Enemy[kMobMax];
+	//Enemy m_EnemyRight[kMobMax];
 	
 	// ショット
 	ShotNormal m_shot[kShotMax];
