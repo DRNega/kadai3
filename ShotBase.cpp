@@ -52,4 +52,5 @@ void ShotBase::draw()
 {
 	if (!m_isExist) return;
 	DrawRotaGraph(m_pos.x, m_pos.y, 1.0, m_angle, m_handle, true, false);
+	DrawCircle(getCenterX(), getCenterY(), 18, GetColor(255, 0, 0), false);
 }

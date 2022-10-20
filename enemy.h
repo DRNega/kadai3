@@ -12,15 +12,16 @@ public:
 	virtual Vec2 getRandPos();
 	virtual void start(Vec2 pos);
 
-	// グラフィックデータ設定
-	virtual void setHandle(int handle) { m_handle = handle; }
+	
 
 	// プレイヤーの初期化
 	virtual void init();
+	// 画像のセット
+	virtual void setHandle(int handle);
 	
-	// 処理
+	// 更新処理
 	virtual void update();
-	// 描画
+	// 描画処理
 	virtual void draw();
 
 	float getPosX() const { return m_pos.x; }

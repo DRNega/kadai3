@@ -16,8 +16,13 @@ namespace
 Player::Player()
 {
 	m_handle = -1;
+	m_aliveHandle = -1;
+	m_deadHandle = -1;
+
 	m_pMain = nullptr;
+
 	m_shotInterval = 0;
+	
 	m_width = 0;
 	m_height = 0;
 
@@ -31,14 +36,25 @@ Player::~Player()
 
 void Player::init()
 {
-	m_isDead = false;
-
 	m_pos.x = 100.0f;
 	m_pos.y = 100.0f;
 	m_vec.x = 0.0f;
 	m_vec.y = 0.0f;
 	m_shotInterval = 0;
+
+	m_isDead = false;
 }
+
+// プレイヤーの画像セット
+void Player::setHandle(int playerHandle, int playerDeadHandle)
+{
+	m_aliveHandle = playerHandle;
+	m_deadHandle = playerDeadHandle;
+
+	// 画像サイズの取得
+	GetGraphSize(m_aliveHandle, &m_width, &m_height);
+}
+
 
 void Player::setPos(float x, float y)
 {
@@ -140,4 +156,6 @@ void Player::draw()
 	}
 
 	DrawGraphF(m_pos.x, m_pos.y, m_handle, true);
+
+	//DrawTriangle(getLeft(), getTop(), getLeft(), getBottom(), getRight(),getTop() + 43, GetColor(255, 255, 255), false);
 }

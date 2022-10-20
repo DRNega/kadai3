@@ -17,6 +17,10 @@ public:
 	// 表示
 	virtual void draw();
 
+	// 敵の中心座標取得
+	virtual float getCenterX() { return m_pos.x + (m_height / 2); }
+	virtual float getCenterY() { return m_pos.y + (m_height / 2); }
+
 	// 当たり判定実装用に四方向の座標を取得する　
 	float getLeft()	const { return m_pos.x; }
 	float getRight()	const { return m_pos.x + static_cast<float>(m_width); }

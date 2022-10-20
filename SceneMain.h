@@ -44,12 +44,21 @@ private:
 
 	// プレイヤーのグラフィックハンドル
 	int m_hPlayerGraphic;
+	int m_hPlayerDeadGraphic;
 
 	// 弾のグラフィックハンドル
 	int m_hShotGraphic;
 	
 	// 敵のグラフィックハンドル
 	int m_hEnemyGraphic;
+
+	// フォントサイズ
+	int m_fontSize;
+
+	// ゲームの制限時間
+	int m_gameTimeRemaining;
+	// ゲームオーバー時の遅延時間
+	int m_GameOverDelay;
 	
 	// プレイヤー
 	Player m_player;

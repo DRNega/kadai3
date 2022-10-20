@@ -12,8 +12,8 @@ public:
 
 	virtual void setPos(float x, float y);
 
-	// グラフィックデータ設定
-	virtual void setHandle(int handle) { m_handle = handle; }
+	// プレイヤーの画像セット
+	virtual void setHandle(int playerHandle, int playerDeadHandle);
 
 	// プレイヤーの初期化
 	virtual void init();
@@ -33,7 +33,7 @@ public:
 	virtual float getCenterY() { return m_pos.y + (m_height / 2); }
 
 	virtual void setDead() { m_isDead = true; }
-	virtual bool getIsDead() { return m_isDead; }
+	virtual bool isDead() { return m_isDead; }
 
 	// 当たり判定実装用に四方向の座標を取得する　
 	float getLeft()	const { return m_pos.x; }

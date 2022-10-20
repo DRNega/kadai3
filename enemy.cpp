@@ -50,6 +50,13 @@ Vec2 Enemy::getRandPos()
 	return m_pos;
 }
 
+// ‰æ‘œ‚ÌƒZƒbƒg
+void Enemy::setHandle(int handle)
+{
+	m_handle = handle;
+	GetGraphSize(m_handle, &m_width, &m_height);
+}
+
 void Enemy::start(Vec2 pos)
 {
 	m_isExist = true;
@@ -100,5 +107,5 @@ void Enemy::draw()
 	DrawGraphF(m_pos.x, m_pos.y, m_handle, true);*/
 
 	DrawRotaGraphF(getCenterX(), getCenterY(), 1.0, m_angle, m_handle, true, false);
-	DrawBox(getLeft(), getTop(), getRight(), getBottom(), GetColor(255, 255, 255), false);
+	DrawCircle(getCenterX(), getCenterY(), 23, GetColor(255, 0, 0), false);
 }
